@@ -32,10 +32,10 @@ public class assignment1 {
         // double result=(f*b)+(i%c)-(d*s);
 
         // System.out.println (result);
-
+        // next 
         // int $=24;
         // System.out.println($);
 
-        
+
     }    
 }
