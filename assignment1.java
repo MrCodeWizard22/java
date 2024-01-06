@@ -36,6 +36,10 @@ public class assignment1 {
         // int $=24;
         // System.out.println($);
 
+        // int x=2;
+        // int y=5;
+        // System.out.println(x*(y/x));
+
 
     }    
 }
