@@ -1,4 +1,5 @@
 import java.util.*;
+//check whether the number is even or odd 
 public class bitManipulation{
     public static int check(int n){
         return (n & 1);
