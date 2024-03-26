@@ -43,7 +43,7 @@ public class Stack1 {
             this.next = null;
         }
     }
-    public static class Stack{
+    public static class Stacka{
         public static Node head;
 
         public static boolean isempty(){
@@ -76,7 +76,7 @@ public class Stack1 {
     }
 
     public static void main(String []args){
-        Stack st = new Stack();
+        Stacka st = new Stacka();
         st.push (1);
         st.push(18);
         st.push (17);
