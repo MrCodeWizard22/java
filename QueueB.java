@@ -1,4 +1,5 @@
 // implementing queue in this program 
+import java.util.*;
 public class QueueB {
     public static int n = 7;
     public static int arr [] = new int [n];
@@ -111,14 +112,25 @@ public class QueueB {
     //     }
     // }
     public static void main(String []args){
-        Queue q = new Queue();
-        q.enque(7);
-        q.enque(49);
-        q.enque(33);
-        q.display();
-        System.out.println();
-        q.deque();
-        q.display();
+
+        Queue <Integer> q = new LinkedList<>();
+        q.add(7);
+        q.add(49);
+        q.add(33);
+        q.add(45);
+        q.add(18);
+        System.out.println(q.peek());
+        q.remove();
+        System.out.println(q.peek());
+
+        // Queue q = new Queue();
+        // q.enque(7);
+        // q.enque(49);
+        // q.enque(33);
+        // q.display();
+        // System.out.println();
+        // q.deque();
+        // q.display();
 
     }
 }
