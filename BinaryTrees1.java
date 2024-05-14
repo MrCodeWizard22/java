@@ -129,6 +129,22 @@ public class BinaryTrees1 {
             int sum = left + right + root.data;
             return sum;
         }
+
+        // function for finding the diameter of the tree(Approach 1)
+        public static int findDiameter(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            int ld = findDiameter(root.left);
+            int rd = findDiameter(root.right);
+            int lh = findHeight(root.left);
+            int rh = findHeight(root.right);
+            int self = lh + rh + 1;
+
+            int dia = Math.max(rh, Math.max(lh, self));
+
+            return dia;
+        }
     }
 
     public static void main(String args[]) {
@@ -157,6 +173,9 @@ public class BinaryTrees1 {
 
         int sum = t.sumNodes(root);
         System.out.println("The sum is : " + sum);
+
+        int dia = t.findDiameter(root);
+        System.out.println("The diameter of the tree is : " + dia);
     }
 
 }
