@@ -145,6 +145,30 @@ public class BinaryTrees1 {
 
             return dia;
         }
+
+        // writinng 2nd Approach for finding the diameter of the tree
+        static class Info {
+            int d;
+            int h;
+
+            Info(int d, int h) {
+                this.d = d;
+                this.h = h;
+            }
+        }
+
+        public static Info diameter2(Node root) {
+            if (root == null) {
+                return new Info(0, 0);
+            }
+            Info lInfo = diameter2(root.left);
+            Info rInfo = diameter2(root.right);
+
+            int dia = Math.max(Math.max(lInfo.d, rInfo.d), lInfo.h + rInfo.h + 1);
+            int ht = Math.max(lInfo.h, rInfo.h) + 1;
+
+            return new Info(dia, ht);
+        }
     }
 
     public static void main(String args[]) {
@@ -176,6 +200,8 @@ public class BinaryTrees1 {
 
         int dia = t.findDiameter(root);
         System.out.println("The diameter of the tree is : " + dia);
+
+        System.out.println("The diamerte of the tree (found with app2 ) is : " + t.diameter2(root).d);
     }
 
 }
