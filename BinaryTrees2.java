@@ -73,6 +73,26 @@ public class BinaryTrees2 {
         }
     }
 
+    public static int kAnscestor(Node root, int k, int n) {
+        if (root == null) {
+            return -1;
+        }
+        if (root.val == n) {
+            return 0;
+        }
+        int lDist = kAnscestor(root.left, k, n);
+        int rDist = kAnscestor(root.right, k, n);
+        if (lDist == -1 && rDist == -1) {
+            return -1;
+        }
+        int maxi = Math.max(lDist, rDist);
+        if (maxi + 1 == k) {
+            System.out.println("\n" + root.val);
+
+        }
+        return maxi + 1;
+    }
+
     public static void main(String args[]) {
         int arr[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, 6, -1, -1, 7, -1, -1 };
         Trees t = new Trees();
@@ -80,5 +100,6 @@ public class BinaryTrees2 {
         // t.levelOrder(root);
 
         t.kLevel(root, 1, 3);
+        int kth = kAnscestor(root, 2, 5);
     }
 }
